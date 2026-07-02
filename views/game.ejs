@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Game</title>
+    <link rel="stylesheet" href="stylesheets/game.css">
+
+</head>
+<body>
+
+<div class="emoji e1">🎯</div>
+<div class="emoji e2">🎮</div>
+<div class="emoji e3">💎</div>
+<div class="emoji e4">👑</div>
+
+<div class="container">
+
+    <h1>🎯 Guess The Number</h1>
+
+    <p class="subtitle">
+        Guess a number between <b><%= from %></b> and <b><%= to %></b>
+    </p>
+
+    <div class="stats">
+        <div class="box">
+            <h3>📌 Range</h3>
+            <p><%= from %> - <%= to %></p>
+        </div>
+
+        <div class="box">
+            <h3>🎯 Attempts</h3>
+            <p><%= attempts %></p>
+        </div>
+    </div>
+
+    <% if (!message || !message.includes("Congratulations")) { %>
+
+        <form action="/check" method="POST">
+
+            <input
+                type="number"
+                name="guessedno"
+                min="<%= from %>"
+                max="<%= to %>"
+                placeholder="Enter your guess..."
+                required>
+
+            <input type="submit" value="🎲 GUESS">
+
+        </form>
+
+    <% } %>
+
+    <% if(message){ %>
+
+        <% if(message.includes("small")){ %>
+
+            <div class="hint small">
+                ⬆️ <%= message %>
+            </div>
+
+        <% }else if(message.includes("large")){ %>
+
+            <div class="hint large">
+                ⬇️ <%= message %>
+            </div>
+
+        <% }else{ %>
+
+            <div class="hint win">
+
+                <h2>🏆 <%= message %></h2>
+
+                <h3 style="margin-top:15px;">
+                    🎉 You Won in <%= attempts %> Attempts!
+                </h3>
+
+                <form action="/" method="GET" class="play-again">
+                    <input type="submit" value="🔄 PLAY AGAIN">
+                </form>
+
+            </div>
+
+        <% } %>
+
+    <% } %>
+
+</div>
+
+</body>
+</html>

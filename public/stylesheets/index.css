@@ -1,0 +1,188 @@
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#0f172a,#1e293b,#312e81);
+            overflow:hidden;
+            position:relative;
+        }
+
+        /* Background Stars */
+        body::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background-image:
+            radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1px),
+            radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px);
+            background-size:90px 90px,140px 140px;
+            opacity:.18;
+        }
+
+        /* Main Heading */
+        .heading{
+            position:absolute;
+            top:35px;
+            color:white;
+            font-size:52px;
+            letter-spacing:3px;
+            text-shadow:
+                0 0 10px cyan,
+                0 0 20px cyan,
+                0 0 35px #00e5ff;
+        }
+
+        /* Card */
+        .container{
+            width:430px;
+            background:rgba(22,27,34,.96);
+            color:white;
+            padding:35px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:
+                0 0 20px rgba(0,255,255,.3),
+                0 0 40px rgba(138,43,226,.25);
+            z-index:10;
+        }
+
+        .game-icon{
+            font-size:70px;
+            margin-bottom:10px;
+        }
+
+        h2{
+            margin-bottom:10px;
+            color:#fff;
+        }
+
+        .subtitle{
+            color:#b8c1ec;
+            margin-bottom:25px;
+        }
+
+        .range{
+            display:flex;
+            gap:15px;
+            margin-bottom:25px;
+        }
+
+        .box{
+            flex:1;
+            text-align:left;
+        }
+
+        label{
+            display:block;
+            margin-bottom:8px;
+            color:#cbd5e1;
+            font-weight:bold;
+        }
+
+        input[type="number"]{
+            width:100%;
+            padding:13px;
+            border:none;
+            border-radius:10px;
+            background:#334155;
+            color:white;
+            font-size:16px;
+            outline:none;
+        }
+
+        input[type="number"]:focus{
+            box-shadow:0 0 10px cyan;
+        }
+
+        input[type="submit"]{
+            width:100%;
+            padding:14px;
+            border:none;
+            border-radius:10px;
+            font-size:18px;
+            font-weight:bold;
+            background:linear-gradient(90deg,#06b6d4,#8b5cf6);
+            color:white;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        input[type="submit"]:hover{
+            transform:translateY(-3px);
+            box-shadow:0 0 18px cyan;
+        }
+
+        /* Rules */
+        .rules{
+            position:absolute;
+            left:60px;
+            width:260px;
+            background:rgba(255,255,255,.08);
+            color:white;
+            padding:25px;
+            border-radius:15px;
+            backdrop-filter:blur(10px);
+        }
+
+        .rules h2{
+            margin-bottom:15px;
+        }
+
+        .rules p{
+            margin:12px 0;
+            color:#dbeafe;
+        }
+
+        /* Difficulty */
+        .difficulty{
+            position:absolute;
+            right:60px;
+            width:260px;
+            background:rgba(255,255,255,.08);
+            color:white;
+            padding:25px;
+            border-radius:15px;
+            backdrop-filter:blur(10px);
+        }
+
+        .difficulty h2{
+            margin-bottom:15px;
+        }
+
+        .difficulty p{
+            margin:12px 0;
+            color:#dbeafe;
+        }
+
+        /* Bottom Quote */
+        .quote{
+            position:absolute;
+            bottom:30px;
+            color:white;
+            font-size:22px;
+            font-style:italic;
+            opacity:.85;
+        }
+
+        /* Floating Emojis */
+        .emoji{
+            position:absolute;
+            font-size:60px;
+            opacity:.15;
+            user-select:none;
+        }
+
+        .e1{top:10%;left:8%;}
+        .e2{top:18%;right:8%;}
+        .e3{bottom:15%;left:10%;}
+        .e4{bottom:18%;right:10%;}
+        .e5{top:45%;left:2%;}
+        .e6{top:48%;right:2%;}
